@@ -1,0 +1,7 @@
+{
+  "name": "@web-clipper/extensions",
+  "version": "0.0.0",
+  "repository": "git@github.com:webclipper/web-clipper-extensions.git",
+  "author": "DiamondYuan <admin@diamondyuan.com>",
+  "license": "MIT"
+}
