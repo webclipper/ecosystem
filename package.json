@@ -1,7 +1,10 @@
 {
-  "name": "@web-clipper/extensions",
+  "name": "@web-clipper/ecosystem",
   "version": "0.0.0",
   "repository": "git@github.com:webclipper/web-clipper-extensions.git",
   "author": "DiamondYuan <admin@diamondyuan.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^3.15.0"
+  }
 }
