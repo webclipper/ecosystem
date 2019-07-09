@@ -6,7 +6,13 @@
   "scripts": {
     "build": "father build"
   },
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@types/jquery": "^3.3.30"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1"
   }
 }

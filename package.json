@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "father": "^2.13.4",
-    "lerna": "^3.15.0"
+    "lerna": "^3.15.0",
+    "typescript": "^3.5.3"
   }
 }

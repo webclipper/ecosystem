@@ -1,4 +1,5 @@
-import style from "./index.css";
+//@ts-ignore
+import style from "./index.less";
 
 const highlight_class = style.highlightSelector;
 
