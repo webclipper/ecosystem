@@ -4,6 +4,9 @@
   "repository": "git@github.com:webclipper/web-clipper-extensions.git",
   "author": "DiamondYuan <admin@diamondyuan.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "lerna run  --parallel build"
+  },
   "devDependencies": {
     "father": "^2.13.4",
     "lerna": "^3.15.0"

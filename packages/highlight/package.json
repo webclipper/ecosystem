@@ -2,5 +2,11 @@
   "name": "@web-clipper/highlight",
   "version": "0.0.0",
   "author": "DiamondYuan <admin@diamondyuan.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "father build"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.3.30"
+  }
 }

@@ -1,3 +1,0 @@
-# `highlight`
-
-> TODO: description
