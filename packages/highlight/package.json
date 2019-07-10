@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "author": "DiamondYuan <admin@diamondyuan.com>",
   "license": "MIT",
+  "main": "dist/index.js",
   "scripts": {
     "build": "father build"
   },

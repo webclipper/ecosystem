@@ -5,9 +5,12 @@
   "author": "DiamondYuan <admin@diamondyuan.com>",
   "license": "MIT",
   "scripts": {
-    "build": "lerna run  --parallel build"
+    "build": "lerna run  --parallel build",
+    "lint": "eslint --ext .tsx,.ts ."
   },
   "devDependencies": {
+    "@diamondyuan/eslint-config-react-typescript": "^7.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "father": "^2.13.4",
     "lerna": "^3.15.0",
     "typescript": "^3.5.3"
