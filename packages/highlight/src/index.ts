@@ -6,7 +6,7 @@ export interface IHighlighter {
   start(): Promise<HTMLElement>;
 }
 
-export default class Highlighter {
+export default class Highlighter implements IHighlighter {
   private previous: HTMLElement | null;
 
   constructor() {
@@ -14,28 +14,34 @@ export default class Highlighter {
   }
 
   public start() {
-    return new Promise((resolve, reject) => {
+    return new Promise<HTMLElement>((resolve, reject) => {
       $('html').one('click', event => {
         if (!this.previous) {
           return;
         }
         $(event.target).removeClass(highlight_class);
         $('html').off('mousemove', this.mousemoveEvent);
-        this.previous = null;
         resolve(event.target);
+        this.previous = null;
         return false;
       });
-      $('html').one('keydown', event => {
-        if (event.keyCode === 27 && this.previous) {
+
+      const keydownEventHandler = (
+        event: JQuery.KeyDownEvent<HTMLElement, undefined, HTMLElement, HTMLElement>
+      ) => {
+        if (event.keyCode === 27) {
           $('html')
             .find(`.${highlight_class}`)
             .removeClass(highlight_class);
           $('html').off('mousemove', this.mousemoveEvent);
+          $('html').off('keydown', keydownEventHandler);
           this.previous = null;
           event.preventDefault();
           reject(new Error('Cancel'));
         }
-      });
+      };
+
+      $('html').on('keydown', keydownEventHandler);
       $('html').on('mousemove', this.mousemoveEvent);
     });
   }
