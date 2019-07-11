@@ -1,0 +1,22 @@
+{
+  "name": "@web-clipper/area-selector",
+  "version": "0.0.2",
+  "author": "DiamondYuan <admin@diamondyuan.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "father build"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/jquery": "^3.3.30"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
