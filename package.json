@@ -5,7 +5,7 @@
   "author": "DiamondYuan <admin@diamondyuan.com>",
   "license": "MIT",
   "scripts": {
-    "publish": "./scripts/publish.js",
+    "publish": "node ./scripts/publish.js",
     "build": "lerna run  --parallel build",
     "lint": "eslint --ext .tsx,.ts ."
   },

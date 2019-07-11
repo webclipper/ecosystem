@@ -5,3 +5,4 @@ node_modules
 /packages/*/dist
 /packages/*/es
 /packages/**/package-lock.json
+yarn-error.log
