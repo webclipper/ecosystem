@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "publish": "node ./scripts/publish.js",
-    "build": "lerna run  --parallel build",
+    "build": "father-build",
     "lint": "eslint --ext .tsx,.ts ."
   },
   "devDependencies": {
