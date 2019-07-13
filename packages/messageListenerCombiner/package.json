@@ -1,0 +1,22 @@
+{
+  "name": "@web-clipper/message-listener-combiner",
+  "version": "0.0.3",
+  "author": "DiamondYuan <admin@diamondyuan.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "father build"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/chrome": "^0.0.86"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "dva-model-creator": "^0.3.0"
+  }
+}
