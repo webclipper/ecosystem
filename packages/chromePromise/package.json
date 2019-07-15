@@ -1,0 +1,19 @@
+{
+  "name": "@web-clipper/chrome-promise",
+  "version": "0.0.3",
+  "author": "DiamondYuan <admin@diamondyuan.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "father build"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "chrome-promise": "^3.0.5"
+  }
+}
