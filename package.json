@@ -5,9 +5,9 @@
   "author": "DiamondYuan <admin@diamondyuan.com>",
   "license": "MIT",
   "scripts": {
-    "publish": "node ./scripts/publish.js",
     "build": "father-build",
-    "lint": "eslint --ext .tsx,.ts ."
+    "lint": "eslint --ext .tsx,.ts .",
+    "pub": "lerna publish"
   },
   "devDependencies": {
     "@diamondyuan/eslint-config-react-typescript": "^7.0.0",
