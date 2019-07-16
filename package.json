@@ -7,9 +7,8 @@
   "scripts": {
     "build": "father-build",
     "lint": "eslint --ext .tsx,.ts .",
-    "pub": "lerna publish",
-    "commit": "git-cz",
-    "prepublish": "npm run build"
+    "pub": "npm run build && lerna publish",
+    "commit": "git-cz"
   },
   "config": {
     "commitizen": {
