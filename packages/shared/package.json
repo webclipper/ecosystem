@@ -12,5 +12,11 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "blueimp-md5": "^2.11.0"
+  },
+  "devDependencies": {
+    "@types/blueimp-md5": "^2.7.0"
   }
 }

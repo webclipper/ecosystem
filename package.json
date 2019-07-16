@@ -8,7 +8,8 @@
     "build": "father-build",
     "lint": "eslint --ext .tsx,.ts .",
     "pub": "lerna publish",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "prepublish": "npm run build"
   },
   "config": {
     "commitizen": {
