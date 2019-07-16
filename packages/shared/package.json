@@ -1,0 +1,16 @@
+{
+  "name": "@web-clipper/shared",
+  "version": "0.0.4",
+  "author": "DiamondYuan <admin@diamondyuan.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "father build"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
