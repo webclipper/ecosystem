@@ -4564,7 +4564,7 @@ astral-regex@^1.0.0:
   resolved "https://registry.npm.taobao.org/astral-regex/download/astral-regex-1.0.0.tgz#6c8c3fb827dd43ee3918f27b82782ab7658a6fd9"
   integrity sha1-bIw/uCfdQ+45GPJ7gngqt2WKb9k=
 
-async-each@^1.0.1, async-each@^1.0.3:
+async-each@^1.0.1:
   version "1.0.3"
   resolved "https://registry.npm.taobao.org/async-each/download/async-each-1.0.3.tgz#b727dbf87d7651602f06f4d4ac387f47d91b0cbf"
   integrity sha1-tyfb+H12UWAvBvTUrDh/R9kbDL8=
@@ -6568,22 +6568,6 @@ child-process-promise@^2.2.1:
     node-version "^1.0.0"
     promise-polyfill "^6.0.1"
 
-chokidar@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.npm.taobao.org/chokidar/download/chokidar-3.0.1.tgz?cache=0&sync_timestamp=1562457945399&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fchokidar%2Fdownload%2Fchokidar-3.0.1.tgz#98fe9aa476c55d9aea7841d6325ffdb30e95b40c"
-  integrity sha1-mP6apHbFXZrqeEHWMl/9sw6VtAw=
-  dependencies:
-    anymatch "^3.0.1"
-    async-each "^1.0.3"
-    braces "^3.0.2"
-    glob-parent "^5.0.0"
-    is-binary-path "^2.1.0"
-    is-glob "^4.0.1"
-    normalize-path "^3.0.0"
-    readdirp "^3.0.2"
-  optionalDependencies:
-    fsevents "^2.0.6"
-
 chokidar@^2.0.2, chokidar@^2.0.4, chokidar@^2.1.6:
   version "2.1.6"
   resolved "https://registry.npm.taobao.org/chokidar/download/chokidar-2.1.6.tgz?cache=0&sync_timestamp=1562457945399&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fchokidar%2Fdownload%2Fchokidar-2.1.6.tgz#b6cad653a929e244ce8a834244164d241fa954c5"
@@ -6603,7 +6587,7 @@ chokidar@^2.0.2, chokidar@^2.0.4, chokidar@^2.1.6:
   optionalDependencies:
     fsevents "^1.2.7"
 
-chokidar@^3.0.0:
+chokidar@^3.0.0, chokidar@^3.0.2:
   version "3.0.2"
   resolved "https://registry.npm.taobao.org/chokidar/download/chokidar-3.0.2.tgz?cache=0&sync_timestamp=1562457945399&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fchokidar%2Fdownload%2Fchokidar-3.0.2.tgz#0d1cd6d04eb2df0327446188cd13736a3367d681"
   integrity sha1-DRzW0E6y3wMnRGGIzRNzajNn1oE=
@@ -9584,10 +9568,10 @@ fastparse@^1.1.1:
   resolved "https://registry.npm.taobao.org/fastparse/download/fastparse-1.1.2.tgz#91728c5a5942eced8531283c79441ee4122c35a9"
   integrity sha1-kXKMWllC7O2FMSg8eUQe5BIsNak=
 
-father-build@1.3.3:
-  version "1.3.3"
-  resolved "https://registry.npm.taobao.org/father-build/download/father-build-1.3.3.tgz#817208a2c5166a57f24ab50b0a1560cbc93e945c"
-  integrity sha1-gXIIosUWalfySrULChVgy8k+lFw=
+father-build@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/father-build/download/father-build-1.3.4.tgz#b55973318814edc1d97f6857d4ee625cbbd9d31a"
+  integrity sha1-tVlzMYgU7cHZf2hX1O5iXLvZ0xo=
   dependencies:
     "@babel/core" "7.4.5"
     "@babel/plugin-proposal-class-properties" "7.4.4"
@@ -9606,7 +9590,7 @@ father-build@1.3.3:
     autoprefixer "9.6.0"
     babel-plugin-react-require "3.1.1"
     chalk "2.4.2"
-    chokidar "3.0.1"
+    chokidar "^3.0.2"
     glob "^7.1.4"
     gulp-if "2.0.2"
     gulp-less "^4.0.1"
@@ -9633,10 +9617,10 @@ father-build@1.3.3:
     vinyl-fs "3.0.3"
     yargs-parser "13.1.1"
 
-father@^2.13.4:
-  version "2.13.4"
-  resolved "https://registry.npm.taobao.org/father/download/father-2.13.4.tgz#2d954dbdaacf54137fa0b766f4b84acfcf64137a"
-  integrity sha1-LZVNvarPVBN/oLdm9LhKz89kE3o=
+father@^2.13.6:
+  version "2.13.6"
+  resolved "https://registry.npm.taobao.org/father/download/father-2.13.6.tgz#72f6a74d7b26c726c24cede0d550de488747200b"
+  integrity sha1-cvanTXsmxybCTO3g1VDeSIdHIAs=
   dependencies:
     "@babel/plugin-proposal-decorators" "7.4.4"
     "@storybook/addon-a11y" "^4.1.3"
@@ -9676,7 +9660,7 @@ father@^2.13.4:
     eslint-plugin-promise "^4.1.1"
     eslint-plugin-react "^7.12.4"
     eslint-plugin-unicorn "^8.0.1"
-    father-build "1.3.3"
+    father-build "1.3.4"
     fs-extra "^8.0.1"
     gh-pages "2.0.1"
     lodash "4.17.11"
@@ -17230,7 +17214,7 @@ readdirp@^2.2.1:
     micromatch "^3.1.10"
     readable-stream "^2.0.2"
 
-readdirp@^3.0.2, readdirp@^3.1.1:
+readdirp@^3.1.1:
   version "3.1.1"
   resolved "https://registry.npm.taobao.org/readdirp/download/readdirp-3.1.1.tgz?cache=0&sync_timestamp=1562457210009&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freaddirp%2Fdownload%2Freaddirp-3.1.1.tgz#b158123ac343c8b0f31d65680269cc0fc1025db1"
   integrity sha1-sVgSOsNDyLDzHWVoAmnMD8ECXbE=
