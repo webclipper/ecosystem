@@ -1,6 +1,6 @@
 {
   "name": "@web-clipper/area-selector",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "DiamondYuan <admin@diamondyuan.com>",
   "license": "MIT",
   "main": "dist/index.js",
