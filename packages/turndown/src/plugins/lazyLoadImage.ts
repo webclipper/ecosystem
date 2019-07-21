@@ -11,10 +11,10 @@ export default function(turndownService: TurndownService) {
           if (dataSrc.startsWith('//')) {
             dataSrc = `${window.location.protocol}${dataSrc}`;
           }
-          return `![](${dataSrc})`;
+          return `![](${dataSrc})\n`;
         }
       }
-      return `![](${node.getAttribute('src')})`;
+      return `![](${node.getAttribute('src')})\n`;
     },
   });
 }
