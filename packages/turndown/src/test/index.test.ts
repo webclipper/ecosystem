@@ -1,4 +1,5 @@
-import TurndownService, { plugins } from '../src';
+import plugins from '../index';
+import TurndownService from 'turndown';
 import fs from 'mz/fs';
 import * as path from 'path';
 

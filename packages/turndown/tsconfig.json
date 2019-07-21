@@ -6,6 +6,8 @@
     "declaration": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
+    "rootDir": "src",
+    "outDir": "lib",
     "strict": true,
     "removeComments": true,
     "noUnusedLocals": true,
