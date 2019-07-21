@@ -2,23 +2,32 @@ import TurndownService from 'turndown';
 
 export default function(turndownService: TurndownService) {
   turndownService.addRule('hexoCodeBlock', {
-    filter: ['figure'],
+    filter: ['figure', 'table'],
     replacement: function(content: string, node: Node) {
       if (!(node instanceof HTMLElement)) {
         return content;
       }
-      const className = node.getAttribute('class');
-      if (!className) {
-        return content;
+      let language = '';
+      if (node.tagName === 'FIGURE') {
+        const className = node.getAttribute('class');
+        if (className) {
+          const match = className.match(/highlight (.*)/);
+          if (match) {
+            language = match[1];
+          }
+        }
       }
-      const match = className.match(/highlight (.*)/);
-      const code = node.querySelector('td.code');
       const gutter = node.querySelector('.gutter');
-      if (!match || !code || !gutter) {
+      const code = node.querySelector('td.code');
+      if (!code || !gutter) {
         return content;
       }
-      const language = match[1];
-      return `\`\`\`${language}\n${(code as HTMLTableCellElement).innerText}\n\`\`\``;
+      const codeArray = Array.from(code.querySelectorAll('.line'));
+      if (!Array.isArray(codeArray)) {
+        return content;
+      }
+      const finalCode = codeArray.map(o => o.textContent).join('\n');
+      return `\`\`\`${language}\n${finalCode}\n\`\`\`\n\n`;
     },
   });
 }

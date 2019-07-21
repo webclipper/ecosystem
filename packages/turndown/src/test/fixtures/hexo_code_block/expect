@@ -13,6 +13,16 @@ HTML文档需要包含一些固定的标签，比如 doctype、html、head、bod
     < title>Document</title>
 </head>
 <body>
+
 </body>
 </html>
+```
+
+```
+<div  class="nav">
+    <ul>
+        <li></li>
+    </ul>
+    <span></span>
+</div>
 ```
