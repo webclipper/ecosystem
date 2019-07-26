@@ -10,7 +10,11 @@ export interface SelectAreaPosition {
   rightBottom: Point;
 }
 
-export default class AreaSelector {
+export interface IAreaSelector {
+  start(): Promise<SelectAreaPosition>;
+}
+
+export default class AreaSelector implements IAreaSelector {
   private startClip: boolean;
   private endClip: boolean;
   private mousedownPoint?: Point;
@@ -22,7 +26,7 @@ export default class AreaSelector {
   }
 
   public start() {
-    return new Promise((resolve, _) => {
+    return new Promise<SelectAreaPosition>((resolve, _) => {
       const element = document.createElement('div');
       element.setAttribute('id', styles.crossLine);
       document.body.appendChild(element);
