@@ -1,6 +1,6 @@
 {
   "name": "@web-clipper/message-listener-combiner",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "author": "DiamondYuan <admin@diamondyuan.com>",
   "license": "MIT",
   "main": "dist/index.js",
