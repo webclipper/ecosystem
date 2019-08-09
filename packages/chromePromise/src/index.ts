@@ -1,6 +1,6 @@
-import chrome from 'chrome-promise';
-import ChromePromise from 'chrome-promise/constructor';
+import tabs from './tabs';
+import cookies from './cookies';
+import browserAction from './browserAction';
+import runtime from './runtime';
 
-export { ChromePromise };
-
-export default chrome;
+export { tabs, cookies, browserAction, runtime };

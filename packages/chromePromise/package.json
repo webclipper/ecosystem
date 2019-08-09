@@ -14,6 +14,6 @@
     "access": "public"
   },
   "dependencies": {
-    "chrome-promise": "^3.0.5"
+    "@types/chrome": "^0.0.88"
   }
 }
