@@ -1,10 +1,14 @@
 class Runtime {
-  public getManifest() {
-    return chrome.runtime.getManifest();
+  get getManifest() {
+    return chrome.runtime.getManifest;
   }
 
   get lastError() {
     return chrome.runtime.lastError;
+  }
+
+  get onMessage() {
+    return chrome.runtime.onMessage;
   }
 }
 
