@@ -6,6 +6,8 @@ import { generateUuid } from './uuid';
 export interface IStorageService {
   readonly onDidChangeStorage: Event<string>;
 
+  init(): Promise<void>;
+
   get(key: string, fallbackValue: string): string;
   get(key: string, fallbackValue?: string): string | undefined;
 
@@ -58,6 +60,13 @@ export abstract class AbstractStorageService implements IStorageService {
       }
     };
     this.changeEvent.addListener(eventListener);
+  }
+
+  public async init() {
+    const initData = (await this.database.get(null)) || {};
+    Object.keys(initData).forEach(key => {
+      this.items.set(key, initData[key]);
+    });
   }
 
   public onDidChangeStorage(listener: (key: string) => void) {
