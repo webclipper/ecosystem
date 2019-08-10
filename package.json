@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "father-build",
-    "lint": "eslint --ext .tsx,.ts .",
+    "lint": "eslint --ext .tsx,.ts,.js .",
     "pub": "npm run build && lerna publish",
     "commit": "git-cz",
     "test": "father test"

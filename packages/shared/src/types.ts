@@ -156,6 +156,8 @@ export function validateConstraint(arg: any, constraint: TypeConstraint | undefi
     if (!isUndefinedOrNull(arg) && arg.constructor === constraint) {
       return;
     }
+    // eslint-disable-next-line no-useless-call
+    // eslint-disable-next-line
     if (constraint.length === 1 && constraint.call(undefined, arg) === true) {
       return;
     }
@@ -207,6 +209,7 @@ export function createProxyObject<T extends object>(
  * Converts null to undefined, passes all other values through.
  */
 export function withNullAsUndefined<T>(x: T | null): T | undefined {
+  // eslint-disable-next-line no-undefined
   return x === null ? undefined : x;
 }
 

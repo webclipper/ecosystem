@@ -1,12 +1,12 @@
 module.exports = {
   extends: [
-    "@diamondyuan/react-typescript",
-    "prettier",
-    "prettier/@typescript-eslint",
-    "prettier/react"
+    '@diamondyuan/react-typescript',
+    'prettier',
+    'prettier/@typescript-eslint',
+    'prettier/react',
   ],
-  plugins: ["prettier"],
+  plugins: ['prettier'],
   rules: {
-    "prettier/prettier": "error"
-  }
+    'prettier/prettier': 'error',
+  },
 };

@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-class-members */
 import { Event } from './event';
 import { isUndefinedOrNull } from './types';
 import { generateUuid } from './uuid';
@@ -33,16 +34,6 @@ export abstract class AbstractStorageService implements IStorageService {
   private storageType: StorageType;
   private listeners: Map<string, (key: string) => void> = new Map<string, (key: string) => void>();
 
-  onDidChangeStorage(listener: (key: string) => void) {
-    const uuid = generateUuid();
-    this.listeners.set(uuid, listener);
-    return {
-      dispose: () => {
-        this.listeners.delete(uuid);
-      },
-    };
-  }
-
   constructor(
     database: IPromiseChromeDataBase,
     changeEvent: chrome.storage.StorageChangedEvent,
@@ -67,6 +58,16 @@ export abstract class AbstractStorageService implements IStorageService {
       }
     };
     this.changeEvent.addListener(eventListener);
+  }
+
+  public onDidChangeStorage(listener: (key: string) => void) {
+    const uuid = generateUuid();
+    this.listeners.set(uuid, listener);
+    return {
+      dispose: () => {
+        this.listeners.delete(uuid);
+      },
+    };
   }
 
   public get(key: string, fallbackValue: string): string;
