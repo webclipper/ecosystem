@@ -60,6 +60,14 @@ export abstract class AbstractStorageService implements IStorageService {
       }
     };
     this.changeEvent.addListener(eventListener);
+
+    this.init = this.init.bind(this);
+    this.onDidChangeStorage = this.onDidChangeStorage.bind(this);
+    this.get = this.get.bind(this);
+    this.getBoolean = this.getBoolean.bind(this);
+    this.getNumber = this.getNumber.bind(this);
+    this.delete = this.delete.bind(this);
+    this.set = this.set.bind(this);
   }
 
   public async init() {
