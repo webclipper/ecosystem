@@ -1,6 +1,6 @@
 {
   "name": "@web-clipper/turndown",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "author": "DiamondYuan <admin@diamondyuan.com>",
   "license": "MIT",
   "main": "dist/index.js",
