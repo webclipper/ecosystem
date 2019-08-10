@@ -1,6 +1,6 @@
 {
   "name": "@web-clipper/shared",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "author": "DiamondYuan <admin@diamondyuan.com>",
   "license": "MIT",
   "main": "dist/index.js",
