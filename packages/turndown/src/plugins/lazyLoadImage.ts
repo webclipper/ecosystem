@@ -1,5 +1,15 @@
 import TurndownService from 'turndown';
 
+function fixUrl(url: string) {
+  if (url.startsWith('//')) {
+    return `${window.location.protocol}${url}`;
+  }
+  if (url.startsWith('/')) {
+    return `${window.location.origin}${url}`;
+  }
+  return url;
+}
+
 export default function(turndownService: TurndownService) {
   turndownService.addRule('lazyLoadImage', {
     filter: ['img'],
@@ -8,13 +18,10 @@ export default function(turndownService: TurndownService) {
       for (const attribute of attributes) {
         let dataSrc: string = node.getAttribute(attribute);
         if (dataSrc) {
-          if (dataSrc.startsWith('//')) {
-            dataSrc = `${window.location.protocol}${dataSrc}`;
-          }
-          return `![](${dataSrc})\n`;
+          return `![](${fixUrl(dataSrc)})\n`;
         }
       }
-      return `![](${node.getAttribute('src')})\n`;
+      return `![](${fixUrl(node.getAttribute('src'))})\n`;
     },
   });
 }

@@ -17,5 +17,5 @@
     }
   ],
   "editor.tabSize": 2,
-  "files.insertFinalNewline": true
+  "files.insertFinalNewline": false
 }
