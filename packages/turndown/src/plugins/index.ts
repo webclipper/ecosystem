@@ -4,7 +4,8 @@ import lazyLoadImage from './lazyLoadImage';
 import hexoCodeBlock from './hexoCodeBlock';
 import noScript from './noScript';
 import wechatCodeBlock from './wechatCodeBlock';
+import ibmCodeBlock from './ibmCodeBlock';
 
 export default function plugins(turndownService: TurndownService) {
-  turndownService.use([gfm, lazyLoadImage, hexoCodeBlock, noScript, wechatCodeBlock]);
+  turndownService.use([gfm, lazyLoadImage, hexoCodeBlock, noScript, wechatCodeBlock, ibmCodeBlock]);
 }
