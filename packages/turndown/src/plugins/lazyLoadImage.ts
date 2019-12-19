@@ -1,6 +1,9 @@
 import TurndownService from 'turndown';
 
 function fixUrl(url: string) {
+  if (!url) {
+    return;
+  }
   if (url.startsWith('//')) {
     return `${window.location.protocol}${url}`;
   }
@@ -21,7 +24,11 @@ export default function(turndownService: TurndownService) {
           return `![](${fixUrl(dataSrc)})\n`;
         }
       }
-      return `![](${fixUrl(node.getAttribute('src'))})\n`;
+      const src = node.getAttribute('src');
+      if (src) {
+        return `![](${fixUrl(node.getAttribute('src'))})\n`;
+      }
+      return '';
     },
   });
 }
