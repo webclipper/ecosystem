@@ -15,6 +15,7 @@ describe('test turndown plugins', () => {
       const fixturesFolderPath = path.join(`${fixturesFolder}/${fixture}`);
       const file = await fs.readFile(path.join(fixturesFolderPath, 'index.html'), 'utf-8');
       const expectResult = await fs.readFile(path.join(fixturesFolderPath, 'expect'), 'utf-8');
+      // fs.writeFileSync(path.join(fixturesFolderPath, 'expect'), service.turndown(file));
       expect(service.turndown(file)).toEqual(expectResult);
     }
   });
