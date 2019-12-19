@@ -1,18 +1,24 @@
 import LocalStorageArea from './local';
 import SyncStorageArea from './sync';
 
-const local = new LocalStorageArea(chrome.storage.local);
-const sync = new SyncStorageArea(chrome.storage.sync);
-
 class Storage {
+  private syncStorageArea?: SyncStorageArea;
+  private localStorageArea?: LocalStorageArea;
+
   get onChanged() {
     return chrome.storage.onChanged;
   }
   get local() {
-    return local;
+    if (!this.localStorageArea) {
+      this.localStorageArea = new LocalStorageArea(chrome.storage.local);
+    }
+    return this.localStorageArea;
   }
   get sync() {
-    return sync;
+    if (!this.syncStorageArea) {
+      this.syncStorageArea = new SyncStorageArea(chrome.storage.sync);
+    }
+    return this.syncStorageArea;
   }
 }
 
