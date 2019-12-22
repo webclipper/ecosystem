@@ -29,6 +29,43 @@ class Tabs {
     });
   };
 
+  public remove(tabId: number | number[]) {
+    if (Array.isArray(tabId)) {
+      return new Promise(r => {
+        chrome.tabs.remove(tabId, r);
+      });
+    }
+    return new Promise(r => {
+      chrome.tabs.remove(tabId as number, r);
+    });
+  }
+
+  /**
+   *
+   * @param arg1 windowId or options
+   */
+  public captureVisibleTab(arg1?: chrome.tabs.CaptureVisibleTabOptions | number): Promise<string> {
+    if (typeof arg1 === 'undefined') {
+      return new Promise<string>(r => {
+        chrome.tabs.captureVisibleTab(res => {
+          r(res);
+        });
+      });
+    }
+    if (typeof arg1 === 'number') {
+      return new Promise<string>(r => {
+        chrome.tabs.captureVisibleTab(arg1, res => {
+          r(res);
+        });
+      });
+    }
+    return new Promise<string>(r => {
+      chrome.tabs.captureVisibleTab(arg1, res => {
+        r(res);
+      });
+    });
+  }
+
   get onUpdated() {
     return chrome.tabs.onUpdated;
   }
