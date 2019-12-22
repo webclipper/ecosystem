@@ -36,18 +36,11 @@ export abstract class AbstractStorageService implements IStorageService {
   private storageType: StorageType;
   private listeners: Map<string, (key: string) => void> = new Map<string, (key: string) => void>();
 
-  constructor(
-    database: IPromiseChromeDataBase,
-    changeEvent: chrome.storage.StorageChangedEvent,
-    storageType: StorageType
-  ) {
+  constructor(database: IPromiseChromeDataBase, changeEvent: chrome.storage.StorageChangedEvent, storageType: StorageType) {
     this.database = database;
     this.changeEvent = changeEvent;
     this.storageType = storageType;
-    const eventListener = (
-      changes: { [key: string]: chrome.storage.StorageChange },
-      areaName: string
-    ) => {
+    const eventListener = (changes: { [key: string]: chrome.storage.StorageChange }, areaName: string) => {
       if (areaName === this.storageType) {
         const keys = Object.keys(changes);
         keys.forEach(key => {

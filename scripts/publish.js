@@ -27,14 +27,10 @@ if (buildCode === 1) {
   process.exit(1);
 }
 
-const cp = fork(
-  join(process.cwd(), 'node_modules/.bin/lerna'),
-  ['version'].concat(process.argv.slice(2)),
-  {
-    stdio: 'inherit',
-    cwd: process.cwd(),
-  }
-);
+const cp = fork(join(process.cwd(), 'node_modules/.bin/lerna'), ['version'].concat(process.argv.slice(2)), {
+  stdio: 'inherit',
+  cwd: process.cwd(),
+});
 cp.on('error', err => {
   console.log(err);
 });

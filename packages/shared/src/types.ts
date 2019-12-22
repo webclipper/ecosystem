@@ -53,13 +53,7 @@ export function isObject(obj: any): obj is Object {
   // The method can't do a type cast since there are type (like strings) which
   // are subclasses of any put not positvely matched by the function. Hence type
   // narrowing results in wrong results.
-  return (
-    typeof obj === _typeof.object &&
-    obj !== null &&
-    !Array.isArray(obj) &&
-    !(obj instanceof RegExp) &&
-    !(obj instanceof Date)
-  );
+  return typeof obj === _typeof.object && obj !== null && !Array.isArray(obj) && !(obj instanceof RegExp) && !(obj instanceof Date);
 }
 
 /**
@@ -130,10 +124,7 @@ export function areFunctions(...objects: any[]): boolean {
 
 export type TypeConstraint = string | Function;
 
-export function validateConstraints(
-  args: any[],
-  constraints: Array<TypeConstraint | undefined>
-): void {
+export function validateConstraints(args: any[], constraints: Array<TypeConstraint | undefined>): void {
   const len = Math.min(args.length, constraints.length);
   for (let i = 0; i < len; i++) {
     validateConstraint(args[i], constraints[i]);
@@ -187,10 +178,7 @@ export function getAllMethodNames(obj: object): string[] {
   return methods;
 }
 
-export function createProxyObject<T extends object>(
-  methodNames: string[],
-  invoke: (method: string, args: any[]) => any
-): T {
+export function createProxyObject<T extends object>(methodNames: string[], invoke: (method: string, args: any[]) => any): T {
   const createProxyMethod = (method: string): (() => any) => {
     return function() {
       const args = Array.prototype.slice.call(arguments, 0);

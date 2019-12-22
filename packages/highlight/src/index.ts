@@ -26,9 +26,7 @@ export default class Highlighter implements IHighlighter {
         return false;
       });
 
-      const keydownEventHandler = (
-        event: JQuery.KeyDownEvent<HTMLElement, undefined, HTMLElement, HTMLElement>
-      ) => {
+      const keydownEventHandler = (event: JQuery.KeyDownEvent<HTMLElement, undefined, HTMLElement, HTMLElement>) => {
         if (event.keyCode === 27) {
           $('html')
             .find(`.${highlight_class}`)
@@ -46,9 +44,7 @@ export default class Highlighter implements IHighlighter {
     });
   }
 
-  private mousemoveEvent = (
-    event: JQuery.MouseMoveEvent<HTMLElement, undefined, HTMLElement, HTMLElement>
-  ) => {
+  private mousemoveEvent = (event: JQuery.MouseMoveEvent<HTMLElement, undefined, HTMLElement, HTMLElement>) => {
     if (!event.target) {
       return;
     }

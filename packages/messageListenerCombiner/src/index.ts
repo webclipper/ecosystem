@@ -1,10 +1,6 @@
 import { ActionCreator, AnyAction, isType } from 'dva-model-creator';
 
-export type Handler<P> = (
-  payload: P,
-  sender: chrome.runtime.MessageSender,
-  sendResponse: (response: any) => void
-) => any;
+export type Handler<P> = (payload: P, sender: chrome.runtime.MessageSender, sendResponse: (response: any) => void) => any;
 
 interface Case<P> {
   actionCreator: ActionCreator<P>;
