@@ -6,7 +6,8 @@ import noScript from './noScript';
 import wechatCodeBlock from './wechatCodeBlock';
 import ibmCodeBlock from './ibmCodeBlock';
 import mediumCodeBlock from './mediumCodeBlock';
+import csdnCodeBlock from './csdnCodeBlock';
 
 export default function plugins(turndownService: TurndownService) {
-  turndownService.use([gfm, lazyLoadImage, hexoCodeBlock, noScript, wechatCodeBlock, ibmCodeBlock, mediumCodeBlock]);
+  turndownService.use([gfm, lazyLoadImage, hexoCodeBlock, noScript, wechatCodeBlock, ibmCodeBlock, mediumCodeBlock, csdnCodeBlock]);
 }
