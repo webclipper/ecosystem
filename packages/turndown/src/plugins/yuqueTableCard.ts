@@ -13,10 +13,10 @@ export default function(turndownService: TurndownService) {
       if (!(node instanceof HTMLElement)) {
         return false;
       }
-      if (node.tagName !== 'DIV') {
+      if (node.tagName !== 'TABLE') {
         return false;
       }
-      if (node.getAttribute('data-lake-card') !== 'table') {
+      if (node.getAttribute('class') !== 'lake-table') {
         return false;
       }
       return true;
