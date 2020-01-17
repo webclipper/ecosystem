@@ -38,48 +38,20 @@ export default function(turndownService: TurndownService) {
         }));
         jsonNodes.push(nodesValue);
       }
-      const temp = jsonNodes.map(jsonNode => {
+      const result: string[][] = jsonNodes.map(() => []);
+      jsonNodes.forEach((row, rowIndex) => {
         const foo: Omit<TableNode, 'colSpan'>[] = [];
-        jsonNode.forEach(o => {
-          let flag = true;
+        row.forEach(o => {
+          const expectIndex = notEmptyIndex(result[rowIndex], 0);
           for (let i = 0; i < o.colSpan; i++) {
-            if (flag) {
-              foo.push({
-                rowSpan: o.rowSpan,
-                content: o.content,
-              });
-            } else {
-              foo.push({
-                rowSpan: o.rowSpan,
-                content: '',
-              });
+            for (let j = 0; j < o.rowSpan; j++) {
+              let first = i === 0 && j === 0;
+              result[rowIndex + j][expectIndex + i] = first ? o.content : '';
             }
-            flag = false;
           }
         });
         return foo;
       });
-      const result: string[][] = [];
-      const rowNumber = temp.length;
-      for (let i = 0; i < rowNumber; i++) {
-        const currentRow = temp[i];
-        currentRow.forEach(colNode => {
-          let flag = true;
-          let tempRow = i;
-          if (!result[tempRow]) {
-            result[tempRow] = [];
-          }
-          const expectIndex = notEmptyIndex(result[tempRow], 0);
-          for (let j = 0; j < colNode.rowSpan; j++) {
-            if (!result[tempRow]) {
-              result[tempRow] = [];
-            }
-            result[tempRow][expectIndex] = flag ? colNode.content : '';
-            tempRow++;
-            flag = false;
-          }
-        });
-      }
       const divider = result[0].map(() => '-');
       result.splice(1, 0, divider);
       return `${result.map(row => `|${row.join('|')}|`).join('\n')}\n\n`;
