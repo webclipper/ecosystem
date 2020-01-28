@@ -8,7 +8,19 @@ import ibmCodeBlock from './ibmCodeBlock';
 import mediumCodeBlock from './mediumCodeBlock';
 import csdnCodeBlock from './csdnCodeBlock';
 import yuqueTableCard from './yuqueTableCard';
+import mediumImage from './mediumImage';
 
 export default function plugins(turndownService: TurndownService) {
-  turndownService.use([gfm, lazyLoadImage, hexoCodeBlock, noScript, wechatCodeBlock, ibmCodeBlock, mediumCodeBlock, csdnCodeBlock, yuqueTableCard]);
+  turndownService.use([
+    gfm,
+    lazyLoadImage,
+    hexoCodeBlock,
+    noScript,
+    wechatCodeBlock,
+    ibmCodeBlock,
+    mediumCodeBlock,
+    csdnCodeBlock,
+    yuqueTableCard,
+    mediumImage,
+  ]);
 }
