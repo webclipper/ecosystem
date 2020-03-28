@@ -9,6 +9,7 @@ import mediumCodeBlock from './mediumCodeBlock';
 import csdnCodeBlock from './csdnCodeBlock';
 import yuqueTableCard from './yuqueTableCard';
 import mediumImage from './mediumImage';
+import zhihuGif from './zhihuGif';
 
 export default function plugins(turndownService: TurndownService) {
   turndownService.use([
@@ -22,5 +23,6 @@ export default function plugins(turndownService: TurndownService) {
     csdnCodeBlock,
     yuqueTableCard,
     mediumImage,
+    zhihuGif,
   ]);
 }
