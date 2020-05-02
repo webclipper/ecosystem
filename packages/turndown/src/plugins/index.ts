@@ -10,6 +10,7 @@ import csdnCodeBlock from './csdnCodeBlock';
 import yuqueTableCard from './yuqueTableCard';
 import mediumImage from './mediumImage';
 import zhihuGif from './zhihuGif';
+import gcoresGallery from './gcoresGallery';
 
 export default function plugins(turndownService: TurndownService) {
   turndownService.use([
@@ -24,5 +25,6 @@ export default function plugins(turndownService: TurndownService) {
     yuqueTableCard,
     mediumImage,
     zhihuGif,
+    gcoresGallery,
   ]);
 }
