@@ -1,8 +1,8 @@
 import TurndownService from 'turndown';
 
-export default function(turndownService: TurndownService) {
+export default function (turndownService: TurndownService) {
   turndownService.addRule('gcoresGallery', {
-    filter: node => {
+    filter: (node) => {
       if (!(node instanceof HTMLElement)) {
         return false;
       }
@@ -15,26 +15,18 @@ export default function(turndownService: TurndownService) {
       }
       return true;
     },
-    replacement: function(content: string, node: Node) {
+    replacement: function (content: string, node: Node) {
       if (!(node instanceof HTMLElement)) {
         return content;
       }
-      let textContent = '';
       const galleryIndex = node.querySelector('.gallery_indexOf')!.querySelectorAll('span');
-      const title = node.querySelector('.story_caption');
-      if (title) {
-        textContent = title.textContent || '';
-      }
+      const title = node.querySelector('.story_caption')?.textContent;
       const galleryItem = node.querySelectorAll('.gallery_item')!;
       const code = Array.from(galleryItem)
         .slice(0, parseInt(galleryIndex[1].textContent!, 10))
-        .map(o => {
-          let title = textContent;
+        .map((o) => {
           const href = o.getAttribute('href');
-          if (o.querySelector('.gallery_imageCaption')) {
-            title = o.querySelector('.gallery_imageCaption')!.textContent!;
-          }
-          return `![${title}](${href})`;
+          return `![${o.querySelector('.gallery_imageCaption')?.textContent ?? title}](${href})`;
         })
         .join('\n');
       return code;
