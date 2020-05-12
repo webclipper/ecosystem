@@ -1,9 +1,9 @@
 import TurndownService from 'turndown';
 
-export default function(turndownService: TurndownService) {
+export default function (turndownService: TurndownService) {
   turndownService.addRule('hexoCodeBlock', {
     filter: ['figure', 'table'],
-    replacement: function(content: string, node: Node) {
+    replacement: function (content: string, node: Node) {
       if (!(node instanceof HTMLElement)) {
         return content;
       }
@@ -26,7 +26,7 @@ export default function(turndownService: TurndownService) {
       if (!Array.isArray(codeArray)) {
         return content;
       }
-      const finalCode = codeArray.map(o => o.textContent).join('\n');
+      const finalCode = codeArray.map((o) => o.textContent).join('\n');
       return `\`\`\`${language}\n${finalCode}\n\`\`\`\n\n`;
     },
   });

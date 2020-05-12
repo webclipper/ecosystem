@@ -15,7 +15,7 @@ export default class Highlighter implements IHighlighter {
 
   public start() {
     return new Promise<HTMLElement>((resolve, reject) => {
-      $('html').one('click', event => {
+      $('html').one('click', (event) => {
         if (!this.previous) {
           return;
         }
@@ -28,9 +28,7 @@ export default class Highlighter implements IHighlighter {
 
       const keydownEventHandler = (event: JQuery.KeyDownEvent<HTMLElement, undefined, HTMLElement, HTMLElement>) => {
         if (event.keyCode === 27) {
-          $('html')
-            .find(`.${highlight_class}`)
-            .removeClass(highlight_class);
+          $('html').find(`.${highlight_class}`).removeClass(highlight_class);
           $('html').off('mousemove', this.mousemoveEvent);
           $('html').off('keydown', keydownEventHandler);
           this.previous = null;

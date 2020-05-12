@@ -13,9 +13,9 @@ function fixUrl(url: string) {
   return url;
 }
 
-export default function(turndownService: TurndownService) {
+export default function (turndownService: TurndownService) {
   turndownService.addRule('zhihuGif', {
-    filter: node => {
+    filter: (node) => {
       if (!(node instanceof HTMLElement)) {
         return false;
       }
@@ -31,7 +31,7 @@ export default function(turndownService: TurndownService) {
       }
       return true;
     },
-    replacement: function(_: any, node: any) {
+    replacement: function (_: any, node: any) {
       let src = node.getAttribute('data-thumbnail') as string;
       if (src) {
         const index = src.lastIndexOf('.');

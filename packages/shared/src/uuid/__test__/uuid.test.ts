@@ -1,7 +1,7 @@
 import { generateUuid } from '../index';
 
-describe('test uuid', function() {
-  it('test generateUuid', function() {
+describe('test uuid', function () {
+  it('test generateUuid', function () {
     expect(generateUuid().length).toBe(36);
   });
 });

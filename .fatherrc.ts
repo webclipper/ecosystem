@@ -1,6 +1,1 @@
-export default {
-  preCommit: {
-    eslint: true,
-    prettier: true
-  }
-};
+export default {};

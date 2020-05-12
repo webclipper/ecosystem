@@ -13,8 +13,8 @@ const cwd = process.cwd();
 const ret = shell.exec('./node_modules/.bin/lerna updated').stdout;
 const updatedRepos = ret
   .split('\n')
-  .map(line => line.replace('- ', ''))
-  .filter(line => line !== '');
+  .map((line) => line.replace('- ', ''))
+  .filter((line) => line !== '');
 
 if (updatedRepos.length === 0) {
   console.log('No package is updated.');
@@ -31,10 +31,10 @@ const cp = fork(join(process.cwd(), 'node_modules/.bin/lerna'), ['version'].conc
   stdio: 'inherit',
   cwd: process.cwd(),
 });
-cp.on('error', err => {
+cp.on('error', (err) => {
   console.log(err);
 });
-cp.on('close', code => {
+cp.on('close', (code) => {
   console.log('code', code);
   if (code === 1) {
     console.error('Failed: lerna publish');
@@ -46,7 +46,7 @@ cp.on('close', code => {
 
 function publishToNpm() {
   console.log(`repos to publish: ${updatedRepos.join(', ')}`);
-  updatedRepos.forEach(repo => {
+  updatedRepos.forEach((repo) => {
     shell.cd(join(cwd, 'packages', repo));
     const { version } = require(join(cwd, 'packages', repo, 'package.json'));
     if (version.includes('-rc.') || version.includes('-beta.') || version.includes('-alpha.')) {

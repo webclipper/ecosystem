@@ -30,14 +30,14 @@ export default class AreaSelector implements IAreaSelector {
       const element = document.createElement('div');
       element.setAttribute('id', styles.crossLine);
       document.body.appendChild(element);
-      $('html').one('mousedown', event => {
+      $('html').one('mousedown', (event) => {
         this.mousedownPoint = {
           clientX: event.clientX!,
           clientY: event.clientY!,
         };
         $(`#${styles.crossLine}`).remove();
         this.startClip = true;
-        $('html').one('mouseup', event => {
+        $('html').one('mouseup', (event) => {
           this.mouseupPoint = {
             clientX: event.clientX!,
             clientY: event.clientY!,

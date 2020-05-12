@@ -1,8 +1,8 @@
 import TurndownService from 'turndown';
 
-export default function(turndownService: TurndownService) {
+export default function (turndownService: TurndownService) {
   turndownService.addRule('wechatCodeBlock', {
-    filter: node => {
+    filter: (node) => {
       if (!(node instanceof HTMLElement)) {
         return false;
       }
@@ -18,13 +18,13 @@ export default function(turndownService: TurndownService) {
       }
       return true;
     },
-    replacement: function(content: string, node: Node) {
+    replacement: function (content: string, node: Node) {
       if (!(node instanceof HTMLElement)) {
         return content;
       }
       const codeNode = node.querySelector('div.code');
       const finalCode = Array.from(codeNode!.querySelectorAll('line'))
-        .map(o => o.textContent)
+        .map((o) => o.textContent)
         .join('\n');
       return `\`\`\`\n${finalCode}\n\`\`\`\n\n`;
     },

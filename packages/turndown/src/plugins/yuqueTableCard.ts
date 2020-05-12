@@ -7,9 +7,9 @@ interface TableNode {
   content: string;
 }
 
-export default function(turndownService: TurndownService) {
+export default function (turndownService: TurndownService) {
   turndownService.addRule('yuqueTableCard', {
-    filter: node => {
+    filter: (node) => {
       if (!(node instanceof HTMLElement)) {
         return false;
       }
@@ -21,7 +21,7 @@ export default function(turndownService: TurndownService) {
       }
       return true;
     },
-    replacement: function(content: string, node: Node) {
+    replacement: function (content: string, node: Node) {
       if (!(node instanceof HTMLElement)) {
         return content;
       }
@@ -29,11 +29,11 @@ export default function(turndownService: TurndownService) {
       const jsonNodes: TableNode[][] = [];
       for (const line of Array.from(lines)) {
         const nodes = line.querySelectorAll('td');
-        const nodesValue = Array.from(nodes).map(node => ({
+        const nodesValue = Array.from(nodes).map((node) => ({
           colSpan: Number(node.getAttribute('colspan')) || 1,
           rowSpan: Number(node.getAttribute('rowspan')) || 1,
           content: Array.from(node.querySelectorAll('p'))
-            .map(o => o.textContent)
+            .map((o) => o.textContent)
             .join('<br />'),
         }));
         jsonNodes.push(nodesValue);
@@ -41,7 +41,7 @@ export default function(turndownService: TurndownService) {
       const result: string[][] = jsonNodes.map(() => []);
       jsonNodes.forEach((row, rowIndex) => {
         const foo: Omit<TableNode, 'colSpan'>[] = [];
-        row.forEach(o => {
+        row.forEach((o) => {
           const expectIndex = notEmptyIndex(result[rowIndex], 0);
           for (let i = 0; i < o.colSpan; i++) {
             for (let j = 0; j < o.rowSpan; j++) {
@@ -54,7 +54,7 @@ export default function(turndownService: TurndownService) {
       });
       const divider = result[0].map(() => '-');
       result.splice(1, 0, divider);
-      return `${result.map(row => `|${row.join('|')}|`).join('\n')}\n\n`;
+      return `${result.map((row) => `|${row.join('|')}|`).join('\n')}\n\n`;
     },
   });
 }

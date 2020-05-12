@@ -43,10 +43,10 @@ export abstract class AbstractStorageService implements IStorageService {
     const eventListener = (changes: { [key: string]: chrome.storage.StorageChange }, areaName: string) => {
       if (areaName === this.storageType) {
         const keys = Object.keys(changes);
-        keys.forEach(key => {
+        keys.forEach((key) => {
           const value = changes[key];
           this.items.set(key, value.newValue);
-          this.listeners.forEach(fun => {
+          this.listeners.forEach((fun) => {
             fun(key);
           });
         });
@@ -65,7 +65,7 @@ export abstract class AbstractStorageService implements IStorageService {
 
   public async init() {
     const initData = (await this.database.get(null)) || {};
-    Object.keys(initData).forEach(key => {
+    Object.keys(initData).forEach((key) => {
       this.items.set(key, initData[key]);
     });
   }

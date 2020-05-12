@@ -1,8 +1,8 @@
 import TurndownService from 'turndown';
 
-export default function(turndownService: TurndownService) {
+export default function (turndownService: TurndownService) {
   turndownService.addRule('mediumImage', {
-    filter: node => {
+    filter: (node) => {
       if (!(node instanceof HTMLElement)) {
         return false;
       }
@@ -18,7 +18,7 @@ export default function(turndownService: TurndownService) {
       }
       return true;
     },
-    replacement: function(content: string, node: Node) {
+    replacement: function (content: string, node: Node) {
       if (!(node instanceof HTMLElement)) {
         return content;
       }

@@ -13,10 +13,10 @@ function fixUrl(url: string) {
   return url;
 }
 
-export default function(turndownService: TurndownService) {
+export default function (turndownService: TurndownService) {
   turndownService.addRule('lazyLoadImage', {
     filter: ['img'],
-    replacement: function(_: any, node: any) {
+    replacement: function (_: any, node: any) {
       const attributes = ['data-src', 'data-original-src'];
       for (const attribute of attributes) {
         let dataSrc: string = node.getAttribute(attribute);

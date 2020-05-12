@@ -34,7 +34,7 @@ export default class StorageArea {
   };
 
   public remove = (keys: string | string[]) => {
-    return new Promise<void>(resolve => {
+    return new Promise<void>((resolve) => {
       this.storage.remove(keys, resolve);
     });
   };
@@ -42,7 +42,7 @@ export default class StorageArea {
   public get = (keys?: string | string[] | Object | null) => {
     return new Promise<{ [key: string]: any }>((resolve, reject) => {
       if (isUndefined(keys)) {
-        this.storage.get(items => {
+        this.storage.get((items) => {
           let err = chrome.runtime.lastError;
           if (chrome.runtime.lastError) {
             reject(err);
@@ -53,7 +53,7 @@ export default class StorageArea {
         return;
       }
 
-      this.storage.get(keys, items => {
+      this.storage.get(keys, (items) => {
         let err = chrome.runtime.lastError;
         if (chrome.runtime.lastError) {
           reject(err);
@@ -65,7 +65,7 @@ export default class StorageArea {
   };
 
   public getBytesInUse = (keys?: string | string[] | null) => {
-    return new Promise<number>(resolve => {
+    return new Promise<number>((resolve) => {
       if (isUndefined(keys)) {
         this.storage.getBytesInUse(resolve);
       } else {
