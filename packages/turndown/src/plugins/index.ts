@@ -11,6 +11,7 @@ import yuqueTableCard from './yuqueTableCard';
 import mediumImage from './mediumImage';
 import zhihuGif from './zhihuGif';
 import gcoresGallery from './gcoresGallery';
+import typoraCodeBlock from './typoraCodeBlock';
 
 export default function plugins(turndownService: TurndownService) {
   turndownService.use([
@@ -26,5 +27,6 @@ export default function plugins(turndownService: TurndownService) {
     mediumImage,
     zhihuGif,
     gcoresGallery,
+    typoraCodeBlock,
   ]);
 }
