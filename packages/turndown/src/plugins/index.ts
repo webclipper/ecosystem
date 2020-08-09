@@ -12,6 +12,7 @@ import mediumImage from './mediumImage';
 import zhihuGif from './zhihuGif';
 import gcoresGallery from './gcoresGallery';
 import typoraCodeBlock from './typoraCodeBlock';
+import juejinCodeBlock from './juejinCodeBlock';
 
 export default function plugins(turndownService: TurndownService) {
   turndownService.use([
@@ -28,5 +29,6 @@ export default function plugins(turndownService: TurndownService) {
     zhihuGif,
     gcoresGallery,
     typoraCodeBlock,
+    juejinCodeBlock,
   ]);
 }
