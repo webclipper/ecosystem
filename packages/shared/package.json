@@ -4,6 +4,7 @@
   "author": "DiamondYuan <admin@diamondyuan.com>",
   "license": "MIT",
   "main": "dist/index.js",
+  
   "scripts": {
     "build": "father build"
   },
@@ -11,6 +12,7 @@
     "lib"
   ],
   "publishConfig": {
+    "registry":"https://registry.npmjs.org/",
     "access": "public"
   },
   "dependencies": {

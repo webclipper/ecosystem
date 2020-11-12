@@ -18,6 +18,7 @@
     "turndown-plugin-gfm": "^1.0.2"
   },
   "publishConfig": {
+    "registry":"https://registry.npmjs.org/",
     "access": "public"
   }
 }
