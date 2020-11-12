@@ -19,17 +19,25 @@ export default function (turndownService: TurndownService) {
       if (!(node instanceof HTMLElement)) {
         return content;
       }
-      const galleryIndex = node.querySelector('.gallery_indexOf')!.querySelectorAll('span');
-      const title = node.querySelector('.story_caption')?.textContent;
       const galleryItem = node.querySelectorAll('.gallery_item')!;
+      if (!galleryItem || galleryItem.length <= 0) {
+        return content;
+      }
+      let imageCount = galleryItem.length;
+      const galleryIndex = node.querySelector('.gallery_indexOf')?.querySelectorAll('span');
+      if (galleryIndex && galleryIndex[1]) {
+        imageCount = parseInt(galleryIndex[1].textContent!, 10) || galleryItem.length;
+      }
+      const title = node.querySelector('.story_caption')?.textContent;
       const code = Array.from(galleryItem)
-        .slice(0, parseInt(galleryIndex[1].textContent!, 10))
+        .slice(0, imageCount)
         .map((o) => {
           const href = o.getAttribute('href');
-          return `![${o.querySelector('.gallery_imageCaption')?.textContent ?? title}](${href})`;
+          const gallery_imageCaption = o.querySelector('.gallery_imageCaption')?.textContent;
+          return `![${gallery_imageCaption ?? title ?? ''}](${href})`;
         })
         .join('\n');
-      return code;
+      return `${code}\n`;
     },
   });
 }
