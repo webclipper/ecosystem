@@ -1,6 +1,6 @@
 {
   "name": "@web-clipper/turndown",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "author": "DiamondYuan <admin@diamondyuan.com>",
   "license": "MIT",
   "main": "dist/index.js",
@@ -18,7 +18,7 @@
     "turndown-plugin-gfm": "^1.0.2"
   },
   "publishConfig": {
-    "registry":"https://registry.npmjs.org/",
+    "registry": "https://registry.npmjs.org/",
     "access": "public"
   }
 }
