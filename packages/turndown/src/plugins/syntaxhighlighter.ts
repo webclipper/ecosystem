@@ -1,19 +1,19 @@
 import TurndownService from 'turndown';
 
 export default function (turndownService: TurndownService) {
-  turndownService.addRule('wechatCodeBlock', {
+  turndownService.addRule('syntaxhighlighter', {
     filter: (node) => {
       if (!(node instanceof HTMLElement)) {
         return false;
       }
-      if (node.tagName !== 'DIV') {
+      if (node.tagName !== 'TABLE') {
         return false;
       }
-      if (!node.className || !node.className.includes('syntaxhighlighter')) {
+      const hasCss = !node.className?.includes('syntaxhighlighter');
+      if (!hasCss) {
         return false;
       }
-      const code = node.querySelector('div.container');
-      if (!code) {
+      if (!node.querySelector('.code') || !node.querySelector('.container')) {
         return false;
       }
       return true;
@@ -22,8 +22,8 @@ export default function (turndownService: TurndownService) {
       if (!(node instanceof HTMLElement)) {
         return content;
       }
-      const codeNode = node.querySelector('div.container');
-      const finalCode = Array.from(codeNode!.querySelectorAll('.line'))
+      const lines = node.querySelector('.container')?.querySelectorAll('line') || [];
+      const finalCode = Array.from(lines)
         .map((o) => o.textContent)
         .join('\n');
       return `\`\`\`\n${finalCode}\n\`\`\`\n\n`;

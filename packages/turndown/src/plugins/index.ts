@@ -14,6 +14,7 @@ import gcoresGallery from './gcoresGallery';
 import typoraCodeBlock from './typoraCodeBlock';
 import juejinCodeBlock from './juejinCodeBlock';
 import strong from './tag/strong';
+import syntaxhighlighter from './syntaxhighlighter';
 
 export default function plugins(turndownService: TurndownService) {
   turndownService.use([
@@ -32,5 +33,6 @@ export default function plugins(turndownService: TurndownService) {
     typoraCodeBlock,
     juejinCodeBlock,
     strong,
+    syntaxhighlighter,
   ]);
 }
