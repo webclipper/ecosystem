@@ -26,7 +26,7 @@ export default function (turndownService: TurndownService) {
         return content;
       }
       node.querySelector('.copy-code-btn')?.remove();
-      return `\`\`\`${(node.firstChild as HTMLElement)?.getAttribute('lang')}\n${node.firstChild?.textContent}\`\`\`\n\n`;
+      return `\`\`\`${(node.firstChild as HTMLElement)?.getAttribute('lang')}\n${node.firstChild?.textContent}\n\`\`\`\n\n`;
     },
   });
 }
