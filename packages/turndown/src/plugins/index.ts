@@ -15,6 +15,7 @@ import typoraCodeBlock from './typoraCodeBlock';
 import juejinCodeBlock from './juejinCodeBlock';
 import strong from './tag/strong';
 import syntaxhighlighter from './syntaxhighlighter';
+import infoq_code from './infoq_code';
 
 export default function plugins(turndownService: TurndownService) {
   turndownService.use([
@@ -34,5 +35,6 @@ export default function plugins(turndownService: TurndownService) {
     juejinCodeBlock,
     strong,
     syntaxhighlighter,
+    infoq_code,
   ]);
 }
