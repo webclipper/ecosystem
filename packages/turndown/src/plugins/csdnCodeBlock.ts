@@ -1,7 +1,7 @@
 import TurndownService from 'turndown';
 
 export default function (turndownService: TurndownService) {
-  turndownService.addRule('mediumCodeBlock', {
+  turndownService.addRule('csdnCodeBlock', {
     filter: (node) => {
       if (!(node instanceof HTMLElement)) {
         return false;
@@ -23,16 +23,15 @@ export default function (turndownService: TurndownService) {
       if (!(node instanceof HTMLElement)) {
         return content;
       }
-
+      node.querySelector('.pre-numbering')?.remove();
       const codeBlock = node.querySelector('code')!;
-
       const code = codeBlock.textContent;
       let language: string = '';
       let languageMatchResult = codeBlock.className.match(/language-(.*) /);
       if (languageMatchResult) {
         language = languageMatchResult[1];
       }
-
+      language = language.split(' ')[0];
       return `\`\`\`${language}\n${code}\n\`\`\`\n\n`;
     },
   });

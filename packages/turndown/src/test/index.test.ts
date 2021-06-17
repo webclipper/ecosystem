@@ -8,7 +8,7 @@ service.use(plugins);
 
 const fixturesFolder = path.join(__dirname, './fixtures');
 
-const whiteList: string[] = ['infoq_code'];
+const whiteList: string[] = [];
 const blackList: string[] = [];
 
 describe('test turndown plugins', () => {

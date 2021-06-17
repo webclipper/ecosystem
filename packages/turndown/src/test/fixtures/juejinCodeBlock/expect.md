@@ -18,4 +18,5 @@ return function(...args) {
   return method.apply(this, args)
 }
 }
+
 ```

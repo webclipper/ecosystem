@@ -9,6 +9,11 @@ export default function (turndownService: TurndownService) {
       if (node.tagName !== 'PRE') {
         return false;
       }
+      // TODO fixme
+      // 先临时忽略 csdn
+      if (node.className === 'prettyprint') {
+        return false;
+      }
       const child = node.firstChild as HTMLElement;
       if (!child) {
         return false;
@@ -26,7 +31,7 @@ export default function (turndownService: TurndownService) {
         return content;
       }
       node.querySelector('.copy-code-btn')?.remove();
-      return `\`\`\`${(node.firstChild as HTMLElement)?.getAttribute('lang')}\n${node.firstChild?.textContent}\`\`\`\n\n`;
+      return `\`\`\`${(node.firstChild as HTMLElement)?.getAttribute('lang')}\n${node.firstChild?.textContent}\n\`\`\`\n\n`;
     },
   });
 }
