@@ -9,8 +9,8 @@ export default function (turndownService: TurndownService) {
       if (node.tagName !== 'PRE') {
         return false;
       }
-      // TODO fixme
-      // 先临时忽略 csdn
+      // TODO debt
+      // csdnCodeBlock
       if (node.className === 'prettyprint') {
         return false;
       }
