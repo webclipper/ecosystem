@@ -16,7 +16,7 @@ export default function (turndownService: TurndownService) {
       if (!node.className.includes('code-snippet__github')) {
         return false;
       }
-      if (!node.querySelector('pre') || !Array.isArray(node.querySelectorAll('code'))) {
+      if (!node.querySelector('pre') || node.querySelectorAll('code').length === 0) {
         return false;
       }
       return true;
