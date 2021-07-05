@@ -16,6 +16,7 @@ import juejinCodeBlock from './juejinCodeBlock';
 import strong from './tag/strong';
 import syntaxhighlighter from './syntaxhighlighter';
 import infoq_code from './infoq_code';
+import wechatCodeBlock_02 from './wechatCodeBlock_02';
 
 export default function plugins(turndownService: TurndownService) {
   turndownService.use([
@@ -24,6 +25,7 @@ export default function plugins(turndownService: TurndownService) {
     hexoCodeBlock,
     noScript,
     wechatCodeBlock,
+    wechatCodeBlock_02,
     ibmCodeBlock,
     mediumCodeBlock,
     csdnCodeBlock,
